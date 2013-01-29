@@ -9,3 +9,4 @@
 {"ts":1359480035135,"patch":[[{"diffs":[[0," %th"],[-1,"{ "],[0,"= li"]],"start1":102,"start2":102,"length1":10,"length2":8},{"diffs":[[0,"'title')"],[-1,"}"],[0,"\n      %"]],"start1":145,"start2":145,"length1":17,"length2":16}]],"length":458,"saved":false}
 {"ts":1359480253555,"patch":[[{"diffs":[[0,"Title', "],[-1,"M"],[1,"m"],[0,"ovie_pat"]],"start1":117,"start2":117,"length1":17,"length2":17}]],"length":458,"saved":false}
 {"ts":1359481509990,"patch":[[{"diffs":[[0," link_to"],[1,"{"],[0," 'Title'"]],"start1":107,"start2":107,"length1":16,"length2":17},{"diffs":[[0,"Title', "],[1,"request.fullpath , d"],[0,"movie_pa"]],"start1":118,"start2":118,"length1":16,"length2":36},{"diffs":[[0,"'title')"],[1,"}"],[0,"\n      %"]],"start1":166,"start2":166,"length1":16,"length2":17}]],"length":480,"saved":false}
+{"ts":1359482001172,"patch":[[{"diffs":[[0,"lpath , "],[-1,"d"],[0,"movie_pa"]],"start1":137,"start2":137,"length1":17,"length2":16}]],"length":479,"saved":false}
