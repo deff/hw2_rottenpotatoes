@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
     
     @all_ratings = Movie.aratings()
     if params[:sort]==nil
-        @movies = Movie.find(:all, :conditions => {"rating => ?", rate})
+        @movies = Movie.find(:all, :conditions => ["rating IN (?)", rate])
     elsif params[:sort]=="byname"
         @movies = Movie.find(:all, :order => "title")
     elsif params[:sort]=="bydate"
