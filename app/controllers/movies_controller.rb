@@ -11,6 +11,8 @@ class MoviesController < ApplicationController
         @movies = Movie.all
     elsif params[:sort]=="byname"
         @movies = Movie.find(:all, :order => "title")
+    elsif params[:sort]=="byname"
+        @movies = Movie.find(:all, :order => ":release_date")   
     end
   end
 
