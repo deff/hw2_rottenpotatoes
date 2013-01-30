@@ -4,7 +4,7 @@
 %table#movies
   %thead
     %tr
-      = link_to 'Title', request.fullpath, :sort => "byname"
+      %th= link_to 'Name', '#', :sort =>'byname', :id => 'name_header'
       %th Rating
       %th Release Date
       %th More Info
