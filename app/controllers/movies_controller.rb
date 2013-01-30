@@ -15,15 +15,21 @@ class MoviesController < ApplicationController
     @sort=flash[:sort]
     
     #2>:params for rate
-    if params[:ratings] == nil and @rate==nil
+    if params[:ratings] == nil and @rate==nil and session[:rate]==nil
         @rate=Movie.aratings()
+    elsif params[:ratings] == nil and @rate==nil
+        redirect_to movie_path(:ratings => session[:ratings])
     elsif params[:ratings] != nil
+        session[:ratings]=params[:ratings]
         @rate=params[:ratings].keys
     end
     
     #3>:sort
     if params[:sort] != nil 
         @sort=params[:sort]
+        session[:sort]=@sort
+    else
+        @sort=session[:sort]
     end
     
     #4>:query bitch!
