@@ -7,6 +7,14 @@ class MoviesController < ApplicationController
   end
 
   def index
+  
+    if params[:ratings] == nil
+        rate=Movie.aratings()
+    else
+        rate=params[:ratings]
+    end
+    
+    
     @all_ratings = Movie.aratings()
     if params[:sort]==nil
         @movies = Movie.where("rating = ?" , params[:ratings].keys)
@@ -15,6 +23,7 @@ class MoviesController < ApplicationController
     elsif params[:sort]=="bydate"
         @movies = Movie.find(:all, :order => "release_date")   
     end  
+    
   end
 
   def new
