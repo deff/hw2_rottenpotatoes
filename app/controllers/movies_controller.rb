@@ -16,12 +16,13 @@ class MoviesController < ApplicationController
     
     
     @all_ratings = Movie.aratings()
+    @sort=params[:sort]
     if params[:sort]==nil and @sort==nil
         @movies = Movie.find(:all, :conditions => ["rating IN (?)", @rate])
-    elsif params[:sort]=="byname" or @sort=="byname"
+    elsif @sort=="byname"
         @sort="byname"
         @movies = Movie.find(:all, :conditions => ["rating IN (?)", @rate], :order => "title")
-    elsif params[:sort]=="bydate" or @sort=="bydate"
+    elsif @sort=="bydate"
         @sort="bydate"
         @movies = Movie.find(:all, :conditions => ["rating IN (?)", @rate], :order => "release_date")   
     end  
