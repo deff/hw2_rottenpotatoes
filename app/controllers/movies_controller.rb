@@ -9,17 +9,13 @@ class MoviesController < ApplicationController
   def index
   
     @all_ratings = Movie.aratings()
-  
-    #1>:flash
-    @rate=flash[:rate]
-    @sort=flash[:sort]
     
-    #2>:params for rate
-    if params[:ratings] == nil and @rate==nil and session[:rate]==nil
+    #2>:params 
+    if params[:ratings] == nil and session[:rate]==nil
         @rate=Movie.aratings()
-    elsif params[:ratings] == nil and @rate==nil
-        redirect_to movie_path(:ratings => session[:ratings])
-    elsif params[:ratings] != nil
+    elsif params[:ratings] == nil
+        redirect_to movie_path(:ratings => session[:ratings], :sort => params[:sort])
+    else
         session[:ratings]=params[:ratings]
         @rate=params[:ratings].keys
     end
@@ -29,7 +25,7 @@ class MoviesController < ApplicationController
         @sort=params[:sort]
         session[:sort]=@sort
     else
-        @sort=session[:sort]
+        redirect_to movie_path(:ratings => params[:ratings], :sort => session[:sort])
     end
     
     #4>:query bitch!
@@ -42,11 +38,6 @@ class MoviesController < ApplicationController
         @sort="bydate"
         @movies = Movie.find(:all, :conditions => ["rating IN (?)", @rate], :order => "release_date")   
     end  
-    
-    #4>: next request flash keep
-    flash[:sort]=@sort
-    flash[:rate]=@rate
-    flash.keep
     
   end
 
