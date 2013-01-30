@@ -1,0 +1,2 @@
+{"ts":1359539131250,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class Movie < ActiveRecord::Base\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":37}]],"length":37}
+{"contributors":[],"silentsave":false,"ts":1359539202719,"patch":[[{"diffs":[[0,"d::Base\n"],[1,"    def ratings\n        return ['G','PG','PG-13','R']\n    end\n"],[0,"end\n"]],"start1":25,"start2":25,"length1":12,"length2":74}]],"length":99,"saved":false}

@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-
+    :before_filter :loadr , :only => :index 
   def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
@@ -43,5 +43,9 @@ class MoviesController < ApplicationController
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
   end
-
+  
+  def loadr
+    @all_ratings = Movie.ratings
+  end
+    
 end
