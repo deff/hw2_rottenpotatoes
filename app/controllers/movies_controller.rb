@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
     if params[:sort]==nil
         @movies = Movie.all
     elsif params[:sort]=="byname"
-        @movie = Movie.find(:all, :order => "title")
+        @movies = Movie.find(:all, :order => "title")
     end
   end
 
