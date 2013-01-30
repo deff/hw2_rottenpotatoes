@@ -1,0 +1,1 @@
+{"ts":1359541699507,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"module MoviesHelper\n  # Checks if a number is odd:\n  def oddness(count)\n    count.odd? ?  \"odd\" :  \"even\"\n  end\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":116}]],"length":116}
