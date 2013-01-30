@@ -9,9 +9,9 @@ class MoviesController < ApplicationController
   def index
   
     if params[:ratings] == nil
-        rate=Movie.aratings()
+        @rate=Movie.aratings()
     else
-        rate=params[:ratings].keys
+        @rate=params[:ratings].keys
     end
     
     
