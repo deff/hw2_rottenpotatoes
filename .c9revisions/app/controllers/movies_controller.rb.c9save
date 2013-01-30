@@ -5,3 +5,4 @@
 {"ts":1359508502573,"patch":[[{"diffs":[[0,"vie."],[-1,"all.order(:"],[1,"find(:all, :order => \""],[0,"title"],[1,"\""],[0,")\n  "]],"start1":361,"start2":361,"length1":24,"length2":36}]],"length":1041,"saved":false}
 {"ts":1359508646128,"patch":[[{"diffs":[[0,"\"\n        @movie"],[1,"s"],[0," = Movie.find(:a"]],"start1":340,"start2":340,"length1":32,"length2":33}]],"length":1042,"saved":false}
 {"contributors":[],"silentsave":false,"ts":1359537322423,"patch":[[{"diffs":[[0,"title\")\n"],[1,"    elsif params[:sort]==\"bydate\"\n        @movies = Movie.find(:all, :order => \":release_date\")   \n"],[0,"    end\n"]],"start1":388,"start2":388,"length1":16,"length2":115}]],"length":1141,"saved":false}
+{"ts":1359537508873,"patch":[[{"diffs":[[0,"der => \""],[-1,":"],[0,"release_"]],"start1":468,"start2":468,"length1":17,"length2":16}]],"length":1140,"saved":false}
