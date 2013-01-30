@@ -7,7 +7,8 @@ class MoviesController < ApplicationController
   end
 
   def index
-  
+    @rate=flash[:rate]
+    @sort=flash[:sort]
     if params[:ratings] == nil and @rate==nil
         @rate=Movie.aratings()
     else
@@ -26,8 +27,9 @@ class MoviesController < ApplicationController
         @sort="bydate"
         @movies = Movie.find(:all, :conditions => ["rating IN (?)", @rate], :order => "release_date")   
     end  
-    flash[@sort].keep
-    flash[@rate].keep
+    flash[:sort]=@sort
+    flash[:rate]=@rate
+    flash.keep
   end
 
   def new
