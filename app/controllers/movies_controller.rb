@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
     
     #3>:sort
     @sort=params[:sort]
-    if params[:sort]==nil and @sort==nil
+    if @sort==nil
         @movies = Movie.find(:all, :conditions => ["rating IN (?)", @rate])
     elsif @sort=="byname"
         @sort="byname"
