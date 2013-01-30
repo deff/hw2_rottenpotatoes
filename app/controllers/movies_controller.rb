@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
     elsif params[:sort]=="bydate"
         @movies = Movie.find(:all, :order => "release_date")   
     end
-    @all_ratings = movies.aratings
+    @all_ratings = Movie.aratings
   end
 
   def new

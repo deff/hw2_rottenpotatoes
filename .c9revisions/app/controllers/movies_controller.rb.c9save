@@ -11,3 +11,4 @@
 {"ts":1359540718565,"patch":[[{"diffs":[[0,"= Movie."],[1,"a"],[0,"ratings\n"]],"start1":1210,"start2":1210,"length1":16,"length2":17}]],"length":1242,"saved":false}
 {"ts":1359541923157,"patch":[[{"diffs":[[0,"ler\n    "],[1,"#"],[0,"before_f"]],"start1":43,"start2":43,"length1":16,"length2":17},{"diffs":[[0,"    end\n"],[1,"    @all_ratings = movie.aratings\n"],[0,"  end\n\n "]],"start1":538,"start2":538,"length1":16,"length2":50}]],"length":1277,"saved":false}
 {"ts":1359542204102,"patch":[[{"diffs":[[0,"ings = movie"],[1,"s"],[0,".aratings\n  "]],"start1":558,"start2":558,"length1":24,"length2":25}]],"length":1278,"saved":false}
+{"ts":1359542615346,"patch":[[{"diffs":[[0,"tings = "],[-1,"m"],[1,"M"],[0,"ovie"],[-1,"s"],[0,".arating"]],"start1":557,"start2":557,"length1":22,"length2":21}]],"length":1277,"saved":false}
