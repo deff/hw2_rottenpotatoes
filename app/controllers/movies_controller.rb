@@ -45,7 +45,7 @@ class MoviesController < ApplicationController
   end
   
   def loadr
-    @all_ratings = Movie.ratings
+    @all_ratings = Movie.aratings
   end
     
 end
