@@ -26,7 +26,8 @@ class MoviesController < ApplicationController
         @sort="bydate"
         @movies = Movie.find(:all, :conditions => ["rating IN (?)", @rate], :order => "release_date")   
     end  
-    
+    flash[@sort].keep
+    flash[@rate].keep
   end
 
   def new
