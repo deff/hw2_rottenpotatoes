@@ -7,29 +7,25 @@ class MoviesController < ApplicationController
   end
 
   def index
-  
+    @sort = params[:sort] || session[:sort]
+    @rate1 = params[:ratings] || session[:ratings]
+    
     @all_ratings = Movie.aratings()
     
-    #2>:params 
-    if params[:ratings] == nil and session[:rate]==nil
-        @rate=Movie.aratings()
-    elsif params[:ratings] == nil
-        redirect_to movie_path(:ratings => session[:ratings], :sort => params[:sort])
+    if params[:sort]==nil and @sort!=nil
+        redirect_to :sort => @sort, :ratings => @rate1 and return
+    end
+    if params[:ratings]==nil and @rate1!=nil
+        redirect_to :sort => @sort, :ratings => @rate1 and return
+    elsif params[:ratings]==nil and @rate1==nil
+        @rate=@all_ratings
     else
-        session[:ratings]=params[:ratings]
         @rate=params[:ratings].keys
     end
+    session[:sort]=@sort
+    session[:ratings]=@rate1
     
-    #3>:sort
-    if params[:sort] != nil 
-        @sort=params[:sort]
-        session[:sort]=@sort
-    else
-        redirect_to movie_path(:ratings => params[:ratings], :sort => session[:sort])
-    end
-    
-    #4>:query bitch!
-    if @sort==nil
+    if  @sort==nil
         @movies = Movie.find(:all, :conditions => ["rating IN (?)", @rate])
     elsif @sort=="byname"
         @sort="byname"
@@ -38,7 +34,8 @@ class MoviesController < ApplicationController
         @sort="bydate"
         @movies = Movie.find(:all, :conditions => ["rating IN (?)", @rate], :order => "release_date")   
     end  
-    
+    flash[@sort].keep
+    flash[@rate].keep
   end
 
   def new
